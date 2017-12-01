@@ -73,11 +73,7 @@ class ItemController extends Controller
     {
 		$item = Item::find($id);
 		
-		$data = array(
-			'item' => $item,
-			'info' => 'OBS. Du kan trykke på titlen for at se en butik'
-		);
-		return view('item.show')->with($data);
+		return view('item.show')->with('item', $item);
     }
 
     /**
