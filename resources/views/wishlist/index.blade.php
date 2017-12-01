@@ -3,7 +3,7 @@
 @section ('content')
 <div class="jumbotron">
 	<div class="container">
-		<h1 class="display-3 d-none d-sm-block">Ønskesedler test</h1>
+		<h1 class="display-3 d-none d-sm-block">Ønskesedler</h1>
 		<h1 class="d-block d-sm-none mb-2">Ønskesedler</h1>
 		<p class="lead">Her kan du se alle ønskesedler</p>	
 		@guest
