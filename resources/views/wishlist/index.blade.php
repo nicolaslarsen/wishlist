@@ -30,8 +30,7 @@
 			<p class="card-text">
 				<div class="row">
 					<div class="col-md-8">
-						Ønskeseddel oprettet af {{ $wishlist->user->name }}
-						<br>
+						<p>Oprettet af {{ $wishlist->user->name }}</p>
 						<small class="text-muted">{{ $wishlist->created_at }}</small>
 					</div>
 					<div class="col-md-4">

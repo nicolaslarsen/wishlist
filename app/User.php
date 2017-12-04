@@ -30,12 +30,17 @@ class User extends Authenticatable
 	public function wishlist(){
 		return $this->hasOne('App\Wishlist');
 	}
+
+	public function categories(){
+		return $this->hasMany('App\Category');
+	}
 	
 	// this is a recommended way to declare event handlers
 	protected static function boot() {
 		parent::boot();
 		static::deleting(function($user) { // before delete() method call this
 			$user->wishlist()->delete();
+			$user->categories()->delete();
 		// do the rest of the cleanup...
 		});
 	}
