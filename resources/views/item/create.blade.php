@@ -3,7 +3,7 @@
 @section ('content')
 
 <div class="container">
-	<div class="card bg-light mt-4">
+	<div class="card bg-light mt-4 mb-4">
 		<div class="card-body">
 			<h3 class="card-title">Tilføj ønske</h3>	
 			{!! Form::open(['action' => 'ItemController@store', 'method' => 'POST', 
@@ -12,6 +12,15 @@
 				{{Form::label('title', 'Titel')}}
 				{{Form::text('title', '', ['class' => 'form-control', 'placeholder' => 'Ønskets navn',
 					'required' => 'required', 'autofocus' => 'autofocus'])}}
+			</div>                 
+			<div class="form-group mt-4">
+				{{Form::label('category', 'Kategori')}}
+				<select id="category" name="category" class="custom-select form-control">
+					<option selected></option>
+					@foreach (Auth::user()->categories as $category)
+						<option value="{{$category->id}}">{{$category->name}}</option>
+					@endforeach
+				</select>
 			</div>                 
 			<div class="form-group mt-4">
 				{{Form::label('link', 'Link til en side')}}

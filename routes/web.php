@@ -16,6 +16,7 @@ Route::get('/', 'WishlistController@index');
 Route::resource('wishlists', 'WishlistController');
 
 Route::resource('items', 'ItemController');
+Route::resource('categories', 'CategoryController');
 
 Auth::routes();
 

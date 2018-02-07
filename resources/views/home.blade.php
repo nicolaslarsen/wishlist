@@ -20,12 +20,12 @@
 	<div class="card mt-4">
 		<div class="card-body">
 			<div class="row">
-				<div class="col-md-8">
+				<div class="col-md-6">
 					<h2 class="card-title mb-4">
 						{{ Auth::user()->wishlist->title }}
 					</h2>
 				</div>
-				<div class="col-md-4">	
+				<div class="col-md-6">	
 					{!!Form::open(['action' => ['WishlistController@destroy',
 						 Auth::user()->wishlist->id],
 						'method' => 'POST',	'onsubmit' => 

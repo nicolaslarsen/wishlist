@@ -11,7 +11,20 @@
 				{{Form::label('title', 'Titel')}}
 				{{Form::text('title', $item->title, 
 					['class' => 'form-control', 'placeholder' => 'Ønskets navn'])}}
-			</div>                 
+			</div>  
+			<div class="form-group mt-4">
+				{{Form::label('category', 'Kategori')}}
+				<select id="category" name="category" class="custom-select form-control">
+					<option></option>
+					@foreach (Auth::user()->categories as $category)
+						<option value="{{$category->id}}"
+						@if ($category->id == $item->category_id)
+							selected
+						@endif
+						>{{$category->name}}</option>
+					@endforeach
+				</select>
+			</div>                
 			<div class="form-group mt-4">
 				{{Form::label('link', 'Link til en side')}}
 				{{Form::text('link', $item->link, ['class' => 'form-control', 

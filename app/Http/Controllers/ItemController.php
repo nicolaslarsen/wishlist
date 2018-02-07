@@ -36,7 +36,7 @@ class ItemController extends Controller
      */
     public function create()
     {
-        return view('item.create');
+		return view('item.create');
     }
 
     /**
@@ -57,8 +57,10 @@ class ItemController extends Controller
 		$item->body			= $request->input('body');
 		$item->wishlist_id	= auth()->user()->wishlist->id;
 
-		$item->save();
+		$item->category_id = $request->input('category');
 
+		$item->save();
+		
 		return redirect('/wishlists/' . auth()->user()->wishlist->id . '/edit')->with(
 			'success', '"' . $item->title . '"' . ' blev tilføjet');
     }
@@ -118,6 +120,8 @@ class ItemController extends Controller
 		$item->title 	= $request->input('title');	
 		$item->link		= $request->input('link');
 		$item->body		= $request->input('body');	
+
+		$item->category_id = $request->input('category');
 
 		$item->save();
 

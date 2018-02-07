@@ -36,13 +36,17 @@
 			<div class="card mt-4">
 				<div class="card-body">
 					<div class="row">
-						<div class="col-md-8">
+						<div class="col-md-6">
 							<h3 class="card-title">Ønsker</h3>
 						</div>
-						<div class="col-md-4">
+						<div class="col-md-6">
 							<a href="/items/create" 
 								class="btn btn-success btn-lg float-md-right">
 								Tilføj ønske
+							</a>
+							<a href="/categories/create" 
+								class="btn btn-primary btn-lg float-md-right mr-2">
+								Tilføj kategori
 							</a>
 						</div>
 					</div>
